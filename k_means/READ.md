@@ -1,36 +1,16 @@
-# This is a basic workflow to help you get started with Actions
+# K-Means
 
-name: CI
+K-Means é, na verdade, um dos algoritmos de agrupamento não supervisionado mais simples. Suponha que temos pontos de dados de entrada x1, x2, x3,…, xn e valor de K (o número de clusters necessários). 
+Seguimos o procedimento abaixo:
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+1) Escolha K pontos como os centróides iniciais do conjunto de dados, aleatoriamente ou o primeiro K.
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+2) Encontre a distância euclidiana de cada ponto no conjunto de dados com os K pontos identificados - centróides do cluster.
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+3) Atribua cada ponto de dados ao centróide mais próximo usando a distância encontrada na etapa anterior.
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+4) Encontre o novo centróide tomando a média dos pontos em cada grupo de cluster.
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+5) Repita 2 a 4 para um número fixo de iterações ou até que os centróides não mudem.
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+-> O ponto onde essa distorção diminui mais é o ponto do cotovelo e esse será o K ideal.
