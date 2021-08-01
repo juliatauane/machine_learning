@@ -1,6 +1,6 @@
 # K-Means
 
-K-Means é, na verdade, um dos algoritmos de agrupamento não supervisionado mais simples. Suponha que temos pontos de dados de entrada x1, x2, x3,…, xn e valor de K (o número de clusters necessários). 
+K-Means é um dos algoritmos de agrupamento não supervisionado mais simples. Suponha que temos pontos de dados de entrada x1, x2, x3,…, xn e valor de K (o número de clusters necessários). 
 Seguimos o procedimento abaixo:
 
 1) Escolha K pontos como os centróides iniciais do conjunto de dados, aleatoriamente ou o primeiro K.
